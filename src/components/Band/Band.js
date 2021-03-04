@@ -16,6 +16,7 @@ function Split(props) {
   }
 }
 
+
 function Band(props) {
     const { band_name, formed, origin, fans, split, style} = props
     
@@ -43,6 +44,13 @@ function Band(props) {
                 </div>
               <div class="row text-left w-100">
                 <p class="">{style}</p>
+                <div class="row text-left w-100">
+                  <ul>
+                  {style.split(',').map((value, i) => {
+                    return <li key={i}>{value}</li>
+                  })}
+                  </ul>
+                </div>
               </div>
               <div class="row text-center mt-3">
                 <Split split={split} />
