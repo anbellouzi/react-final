@@ -1,34 +1,46 @@
-// src/Project.js
+import React from 'react';
+import './Like.css'
 
-import React, { useState } from 'react'
-import './Like.css';
-// import { Link } from 'react-router-dom'
+class Like extends React.Component {
+  constructor() {
+    super();
 
-function Like(props) {
-    const {key} = props
-    const [ setQuery ] = useState('')
+    this.state = {
+      score: 0,
+    };
 
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
+  }
+
+  render() {
     return (
-      
-        <div class="row w-50 m-auto">
-            <button id={key}
-                    class="btn mr-3"
-                    onClick={(e) => setQuery(e.target.id)}
-            >
+      <div class="row justify-content-center w-100">
+        <button className="btn countUp mr-3" onClick={this.increment}>
             <i class="fa fa-thumbs-up"></i>
-          </button>
+        </button>
 
-          <input class="w-25 text-center border" id={key} value={0} />
-          
-            <button 
-                id={key}
-                class="btn ml-3"
-                onClick={(e) => setQuery(e.target.id)}
-            >
-                <i class="fa fa-thumbs-down"></i>
-          </button>
-        </div>
-    )
+        <div>{this.state.score}</div>
+
+
+        <button className="btn countDown ml-3" onClick={this.decrement}>
+            <i class="fa fa-thumbs-down"></i>
+        </button>
+      </div>
+    );
+  }
+
+  increment() {
+    this.setState({
+      score: this.state.score + 1,
+    });
+  }
+
+  decrement() {
+    this.setState({
+      score: this.state.score - 1,
+    });
+  }
 }
 
 export default Like

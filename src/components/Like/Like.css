@@ -1,0 +1,14 @@
+.fa {
+    color: gold;
+    font-size: 28px;
+}
+
+.fa-thumbs-down:hover {
+    color: red;
+    font-size: 28px;
+}
+
+.fa-thumbs-up:hover {
+    color: green;
+    font-size: 28px;
+}
