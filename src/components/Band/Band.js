@@ -33,7 +33,7 @@ function Band(props) {
                     <strong>Origin:</strong> <p> {origin} </p>
                     
                     <p>
-                      <strong>Fans:</strong>{fans}
+                      <strong>Fans:</strong>{(fans*1000).toLocaleString('en')}
                     </p>
                     <p>
                       <strong>Formed:</strong>{formed} 
