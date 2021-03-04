@@ -22,8 +22,11 @@ function MetalMeta() {
     })
 
   return (
-    <div className="Band-list">
-      {bands}
+
+    <div class="container">
+      <div class="row">
+        {bands}
+      </div>
     </div>
   )
   
