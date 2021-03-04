@@ -20,7 +20,7 @@ class Like extends React.Component {
             <i class="fa fa-thumbs-up"></i>
         </button>
 
-        <div>{this.state.score}</div>
+        <div class="score">{this.state.score}</div>
 
 
         <button className="btn countDown ml-3" onClick={this.decrement}>
