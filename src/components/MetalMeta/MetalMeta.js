@@ -17,6 +17,8 @@ function MetalMeta() {
             formed={obj.formed}
             origin={obj.origin}
             fans={obj.fans}
+            split={obj.split}
+            style={obj.style}
           />
         )
     })

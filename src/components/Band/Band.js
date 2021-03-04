@@ -5,9 +5,21 @@ import './Band.css';
 import Like from '../Like/Like'
 // import { Link } from 'react-router-dom'
 
-function Band(props) {
-    const { band_name, formed, origin, fans} = props
+function Split(props) {
+  const split = props.split;
 
+  if (split == "-") {
+    return <Like />
+  }
+  else {
+    return <br></br>
+  }
+}
+
+function Band(props) {
+    const { band_name, formed, origin, fans, split, style} = props
+    
+    
     return (
       
         <div class="col-sm-4">
@@ -16,18 +28,24 @@ function Band(props) {
                 <h2 class="band-title m-5">{band_name}</h2>
                 
                 <div class="row">
+                    
+                    <strong>Origin:</strong> <p> {origin} </p>
+                    
                     <p>
-                      <bold>Origin:</bold> {origin} 
+                      <strong>Fans:</strong>{fans}
                     </p>
                     <p>
-                      <bold>Formed:</bold>{formed} 
+                      <strong>Formed:</strong>{formed} 
                     </p>
                     <p>
-                      <bold>Fans:</bold>{fans}
+                      <strong>Split:</strong>{split} 
                     </p>
                 </div>
-              <div class="row text-center">
-                <Like />
+              <div class="row text-left w-100">
+                <p class="">{style}</p>
+              </div>
+              <div class="row text-center mt-3">
+                <Split split={split} />
               </div>
             </div>
           </div>
